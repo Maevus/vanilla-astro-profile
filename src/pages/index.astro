@@ -1,38 +1,36 @@
 ---
+import Logos from "../components/Logos.astro";
 import Layout from "../layouts/Layout.astro";
-import ThemeIcon from "../components/ThemeIcon.astro";
 import "../styles/global.css";
 ---
 
-<Layout title="WIP Portfolio">
-  <ThemeIcon />
+<Layout>
   <main class="container mx-auto px-4 py-8">
-    <section class="text-center mb-16">
-      <h1 class="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-      <p class="text-xl text-gray-600 dark:text-gray-400">
-        Frontend Developer & UI/UX Enthusiast
-      </p>
-    </section>
-
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold mb-4">About Me</h2>
-        <p class="text-gray-600 dark:text-gray-400">
+    <section
+      class="mb-24 flex flex-col-reverse items-center gap-y-4 gap-x-10 md:flex-row md:items-center"
+    >
+      <div class="flex-1">
+        <h1 class="text-xl font-bold">Hi, I'm Maeve</h1>
+        <p>
           I'm a passionate developer focused on creating beautiful and
           functional web experiences. With expertise in modern web technologies,
           I bring ideas to life through clean code and thoughtful design.
         </p>
       </div>
 
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold mb-4">Skills</h2>
-        <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-          <li>• HTML, CSS, JavaScript</li>
-          <li>• React, Vue, Astro</li>
-          <li>• Tailwind CSS</li>
-          <li>• Responsive Design</li>
-          <li>• UI/UX Design</li>
-        </ul>
+      <div class="relative flex justify-center">
+        <img
+          src="/src/assets/maeve.png"
+          alt="Maeve"
+          class="max-h-60 rounded-2xl text-center greyscale"
+        />
+      </div>
+    </section>
+
+    <section class="mb-24 flex flex-col">
+      <h2 class="text-2xl font-bold mb-4">Toolkit</h2>
+      <div class="flex justify-center">
+        <Logos />
       </div>
     </section>
 
@@ -41,7 +39,7 @@ import "../styles/global.css";
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {
           [1, 2, 3].map((project) => (
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class=" p-6 rounded-lg shadow-lg">
               <h3 class="text-xl font-bold mb-2">Project {project}</h3>
               <p class="text-gray-600 dark:text-gray-400 mb-4">
                 A brief description of the project and its key features.
@@ -59,7 +57,7 @@ import "../styles/global.css";
     </section>
 
     <footer class="text-center text-gray-600 dark:text-gray-400">
-      <p>© 2024 My Portfolio. All rights reserved.</p>
+      <p>© 2024</p>
     </footer>
   </main>
 </Layout>

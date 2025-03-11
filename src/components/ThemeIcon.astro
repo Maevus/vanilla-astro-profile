@@ -23,18 +23,54 @@
     background: none;
     cursor: pointer;
   }
+
   .sun {
-    fill: black;
+    fill: #4b5563; /* text-gray-600 */
+    transition-property: color; /* transition-colors */
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+
+    &:hover {
+      fill: #1f2937;
+    }
   }
+
   .moon {
-    fill: transparent;
+    fill: transparent; /* dark:text-gray-400 */
   }
 
   :global(.dark) .sun {
     fill: transparent;
   }
+
   :global(.dark) .moon {
-    fill: white;
+    fill: #9ca3af;
+
+    &:hover {
+      fill: #e5e7eb;
+      color: #e5e7eb;
+    }
+  }
+
+  .icon-link {
+    color: #4b5563; /* text-gray-600 */
+    transition-property: color; /* transition-colors */
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .icon-link:hover {
+    color: #1f2937; /* hover:text-gray-800 */
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .icon-link {
+      color: #9ca3af; /* dark:text-gray-400 */
+    }
+
+    .icon-link:hover {
+      color: #e5e7eb; /* dark:hover:text-gray-200 */
+    }
   }
 </style>
 
