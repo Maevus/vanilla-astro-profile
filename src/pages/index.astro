@@ -5,16 +5,16 @@ import "../styles/global.css";
 ---
 
 <Layout>
-  <main class="container mx-auto px-4 py-8">
+  <main class="container mx-auto px-4 py-2 md:py-8">
     <section
-      class="mb-24 flex flex-col-reverse items-center gap-y-4 gap-x-10 md:flex-row md:items-center"
+      class="mb-2 flex flex-col-reverse items-center gap-y-4 gap-x-10 md:flex-row md:items-center"
     >
       <div class="flex-1">
-        <h1 class="text-xl font-bold">Hi, I'm Maeve</h1>
+        <h1 class="font-bold">Hello, I'm Maeve 👋</h1>
         <p>
-          I'm a passionate developer focused on creating beautiful and
-          functional web experiences. With expertise in modern web technologies,
-          I bring ideas to life through clean code and thoughtful design.
+          Welcome to my portfolio. I'm a passionate developer focused on
+          creating beautiful and functional web experiences. I bring ideas to
+          life through clean code and thoughtful design.
         </p>
       </div>
 
@@ -27,19 +27,14 @@ import "../styles/global.css";
       </div>
     </section>
 
-    <section class="mb-24 flex flex-col">
-      <h2 class="text-2xl font-bold mb-4">Toolkit</h2>
-      <div class="flex justify-center">
-        <Logos />
-      </div>
-    </section>
+    <Logos class="md:py-24" />
 
     <section class="mb-16">
-      <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
+      <h2 class="text-3xl font-bold mb-8">What can I do?</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {
           [1, 2, 3].map((project) => (
-            <div class=" p-6 rounded-lg shadow-lg">
+            <div class="p-6 rounded-lg shadow-lg">
               <h3 class="text-xl font-bold mb-2">Project {project}</h3>
               <p class="text-gray-600 dark:text-gray-400 mb-4">
                 A brief description of the project and its key features.
@@ -57,7 +52,7 @@ import "../styles/global.css";
     </section>
 
     <footer class="text-center text-gray-600 dark:text-gray-400">
-      <p>© 2024</p>
+      <p>© 2025</p>
     </footer>
   </main>
 </Layout>

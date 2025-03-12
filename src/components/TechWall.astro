@@ -1,0 +1,48 @@
+---
+const { technologies, prettifiedTechnologies } = Astro.props;
+---
+
+<h1 class="hidden md:block font-bold">Toolkit</h1>
+<div
+    class="flex w-max gap-12 md:gap-20 py-4 animate-scroll md:w-full md:flex-wrap md:justify-center"
+>
+    {
+        technologies.map((tech: string) => (
+            <div class="flex items-center gap-2 group transition-all duration-300">
+                <img
+                    src={`src/assets/logos/${tech}.svg`}
+                    alt={tech}
+                    class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
+                    width="30"
+                    height="30"
+                    loading="lazy"
+                />
+                <span class="text-lg font-medium text-[var(--white-icon)]">
+                    {prettifiedTechnologies[tech]}
+                </span>
+            </div>
+        ))
+    }
+</div>
+<!-- md:animate-none md:w-full md:flex-wrap md:justify-center -->
+
+<style is:global>
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    .animate-scroll {
+            animation: scroll 60s linear infinite;
+        }
+
+    @media (min-width: 768px) {
+        .animate-scroll {
+            animation: none;
+        }
+    }
+</style>

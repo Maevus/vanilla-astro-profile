@@ -1,7 +1,7 @@
 ---
-import TechScroller from "./TechScroller.astro";
+import TechWall from "./TechWall.astro";
 
-const frontEnd: string[] = [
+const technologies: string[] = [
     "angular",
     "astro",
     "react",
@@ -10,9 +10,6 @@ const frontEnd: string[] = [
     "html5",
     "css3",
     "javascript",
-];
-
-const backEnd: string[] = [
     "python",
     "django",
     "dotnet",
@@ -21,9 +18,6 @@ const backEnd: string[] = [
     "mysql",
     "nodejs",
     "aws",
-];
-
-const tools: string[] = [
     "vscode",
     "cursor",
     "git",
@@ -32,9 +26,35 @@ const tools: string[] = [
     "figma",
     "unity",
 ];
+
+const prettifiedTechnologies = {
+    angular: "Angular",
+    astro: "Astro",
+    react: "React",
+    typescript: "Typescript",
+    tailwindcss: "TailwindCSS",
+    html5: "HTML5",
+    css3: "CSS3",
+    javascript: "Javascript",
+    python: "Python",
+    django: "Django",
+    dotnet: ".NET",
+    csharp: "C#",
+    java: "Java",
+    mysql: "MySQL",
+    nodejs: "NodeJS",
+    aws: "AWS",
+    vscode: "VSCode",
+    cursor: "Cursor",
+    git: "Git",
+    github: "Github",
+    bash: "Bash",
+    figma: "Figma",
+    unity: "Unity",
+};
 ---
 
-<div class="relative overflow-x-hidden">
+<div class="relative overflow-x-hidden py-6 md:py-24">
     <div
         class="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[var(--background)] to-transparent z-20"
     >
@@ -44,48 +64,7 @@ const tools: string[] = [
     >
     </div>
 
-    <TechScroller technologies={frontEnd.concat(backEnd).concat(tools)} />
-    <!-- <TechScroller technologies={backEnd} />
-    <TechScroller technologies={tools} /> -->
-    <!-- <div
-        class="flex gap-12 md:gap-20 w-max"
-    >
-        {
-            tools.map((tech: string) => (
-                <div class="flex items-center gap-2 group">
-                    <img
-                        src={`src/assets/logos/${tech}.svg`}
-                        alt={tech}
-                        class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
-                        width="30"
-                        height="30"
-                        loading="lazy"
-                    />
-                    <span class="text-lg font-medium text-[var(--white-icon)]">
-                        {tech.charAt(0).toUpperCase() + tech.slice(1)}
-                    </span>
-                </div>
-            ))
-        }
-    </div> -->
+    <TechWall technologies={technologies} prettifiedTechnologies={prettifiedTechnologies} />
 </div>
 
-<style is:global>
-    @keyframes scroll {
-        from {
-            transform: translateX(0);
-        }
-        to {
-            transform: translateX(-50%);
-        }
-    }
-    .animate-scroll {
-        animation: scroll 60s linear infinite;
-    }
 
-    @media (min-width: 768px) {
-        .animate-scroll {
-            animation-duration: 50s;
-        }
-    }
-</style>
