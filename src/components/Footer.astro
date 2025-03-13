@@ -2,15 +2,9 @@
 import Social from "./Social.astro";
 ---
 
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
-
-<footer>
-  <Social platform="github" username="maevus" />
-  <Social platform="linkedIn" username="/in/maeve-lynskey-56b296241/" />
+<footer class="flex justify-evenly items-baseline">
+    <Social />
+    <p class="text-center text-gray-600 dark:text-gray-400 self-center">
+        © 2025
+    </p>
 </footer>
